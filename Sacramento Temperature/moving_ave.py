@@ -1,4 +1,4 @@
-# Homework 5 part 4
+# Part 5
 # Jason Zhang
 #
 # Moving average part 1: first window
@@ -20,19 +20,20 @@ for line in infile:
     Year=line[0]               #Year
     Value=float(line[1])       #Temperature
     Values.append(Value)       #grow list     
-    
 
-    #calculating average temp 
-    year = 1880 + index
-    year=str(year)          #Convert int to str 
-    ave = sum(Values[index-index:index+index+1]) / (2*index+1)
-    ave="{:.4f}".format(ave)     #Format the result to four decimal places
-    ave=str(ave)            #Conver int to str 
-    
-    
-
-print(year+','+ave )       #This creates no whitespace between the results. only one comma
 infile.close()
 
+
+for row in range(index,len(Values) - index):
+    year = 1880 + row
+    
+    year=str(year)          #Convert int to str 
+    ave = sum(Values[row-index:row+index+1]) / (2*index+1)
+    ave="{:.4f}".format(ave)     #Format the result to four decimal places
+    ave=str(ave)            #Conver int to str
+    print(year+','+ave ) 
+                             #This creates no whitespace between the results. only one comma
+infile.close()
+    
 
 #SacramentoTemps.csv

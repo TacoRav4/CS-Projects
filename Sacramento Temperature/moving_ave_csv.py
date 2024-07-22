@@ -1,12 +1,12 @@
-# Homework 5 part 5
+# Part 6
 # Jason Zhang
 #
-# Moving average part 1: first window
+#  Create a .csv file 
 
 #Input
 file=input('Temperature anomaly filename:')
-infile=open(file)
-index=int(input("Enter window size:"))
+index=int(input('Enter window size:'))
+infile=open(file,'r')
 
 #Ignore the header
 infile.readline()
@@ -23,17 +23,19 @@ for line in infile:
 
 infile.close()
 
+openfile=open('MovingAve.csv','w')
+openfile.write("Year,Value\n")
 
-for row in range(index,len(Values) - index):
+# Loop with the correct range
+for row in range(index,len(Values)-index):
     year = 1880 + row
-    
     year=str(year)          #Convert int to str 
     ave = sum(Values[row-index:row+index+1]) / (2*index+1)
-    ave="{:.4f}".format(ave)     #Format the result to four decimal places
+    ave="{:.4f}\n".format(ave)     #Format the result to four decimal places
     ave=str(ave)            #Conver int to str
-    print(year+','+ave ) 
+    openfile.write(year+','+ave) 
                              #This creates no whitespace between the results. only one comma
-infile.close()
+openfile.close()
     
 
 #SacramentoTemps.csv

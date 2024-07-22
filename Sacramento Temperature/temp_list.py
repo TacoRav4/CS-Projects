@@ -1,4 +1,4 @@
-# Homework 5 part 3
+# Part 3
 # Jason Zhang
 #
 # Reading the data into a list

@@ -1,4 +1,4 @@
-# Homework 5 part 2
+# Part 2
 # Jason Zhang
 #
 # outlier Temperatures

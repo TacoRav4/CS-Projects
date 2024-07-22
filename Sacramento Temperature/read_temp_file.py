@@ -1,4 +1,4 @@
-# Homework 5 part 1
+# Part 1
 # Jason Zhang
 #
 # read the temperature data 
